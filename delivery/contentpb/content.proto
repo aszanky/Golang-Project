@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package content;
+option go_package="contentpb";
+
+message Content {
+    int32 id = 1;
+    string content = 2;
+}
+
+message CreateContentReq {
+    Content content = 1;
+}
+
+message CreateContentRes {
+    Content content = 1;
+}
+
+message UpdateContentReq {
+    Content content = 1;
+}
+
+message UpdateContentRes {
+    Content content = 1;
+}
+
+message DeleteContentReq {
+    Content content = 1;
+}
+
+message DeleteContentRes {
+    string success = 1;
+}
+
+message ReadContentReq {
+    Content content = 1;
+}
+
+message ReadContentRes {
+    Content content = 1;
+}
+
+message GetAllContentReq {
+}
+
+message GetAllContentRes {
+    repeated Content content = 1;
+}
+
+service ContentService {
+    rpc CreateContent (CreateContentReq) returns (CreateContentRes);
+    rpc UpdateContent (UpdateContentReq) returns (UpdateContentRes);
+    rpc DeleteContent (DeleteContentReq) returns (DeleteContentRes);
+    rpc ReadContent (ReadContentReq) returns (ReadContentRes);
+    rpc GetAllContent (GetAllContentReq) returns (GetAllContentRes);
+}
