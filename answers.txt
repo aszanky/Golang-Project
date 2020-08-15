@@ -1,0 +1,17 @@
+Do you implement the clean architecture in your application? if yes, please explain
+How to scale up your application and when it needs to be
+
+Answer :
+I have implemented a clean architecture method, trying to follow Uncle Bob’s techniques, 
+I have split code based on the purpose. 
+The entity is the important thing for business, 
+Repository is for Data Store using gcache memory cache, 
+Delivery is for delivering use-case (gRPC, rest, messaging queue and more) here I am using gRPC, 
+lastly is the use-case for the business logic. 
+The clean architecture method has to pay attention to business logic separation.
+
+Scale-up the application, 
+I think it relates to scalability. 
+When our app can’t able to handle more users, transactions, requests, 
+at that time we have to decide to scale up our application. 
+I think for now if we are using a cloud, we can use autoscale features.
